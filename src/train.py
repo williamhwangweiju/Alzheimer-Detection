@@ -1,8 +1,6 @@
 from config import *  
 from utils import preprocess_data
 from data_loader import load_data  
-from baseline import baseline_model
-
 
 def train():
     print("🚀 Training process started...")
@@ -17,8 +15,6 @@ def train():
 
     # TODO: Add model training logic here
     print("🔧 Model training logic goes here...\n")
-    
-    baseline_model(data, result)
-    
+        
 if __name__ == "__main__":
     train()
