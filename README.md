@@ -92,7 +92,7 @@ The pipeline includes:
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/Alzheimer-MRI-Detection.git
+git clone https://github.com/HitanshBhatt/Alzheimer-MRI-Detection.git
 cd Alzheimer-MRI-Detection
 
 # (Optional) Create and activate a virtual environment
