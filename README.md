@@ -1,10 +1,10 @@
-# Alzheimer's Detection from Brain MRI Scans - APS360 Deep Learning Project
+# Alzheimer's Detection from Brain MRI Scans
 
 A deep learning-based project to detect Alzheimer's Disease using brain MRI scans. This project leverages convolutional neural networks (CNNs) and transfer learning techniques (ResNet152) to classify MRI images into respective Alzheimer's stages with high accuracy.
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Dataset](#dataset)
@@ -14,85 +14,88 @@ A deep learning-based project to detect Alzheimer's Disease using brain MRI scan
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Acknowledgements](#acknowledgements)
 - [Disclaimer & Citation](#disclaimer--citation)
+- [Contact](#contact)
 
 ---
 
-## 🧾 Overview
+## Overview
 
-Alzheimer's is a progressive neurodegenerative disorder. Early detection can help with better disease management. This project applies state-of-the-art computer vision techniques to identify stages of Alzheimer's from brain MRI scans.
+Alzheimer's is a progressive neurodegenerative disorder that affects memory, cognitive function, and behavior. Early detection can significantly improve quality of life and treatment options. This project applies state-of-the-art computer vision and deep learning techniques to identify stages of Alzheimer's from brain MRI scans.
 
-The pipeline involves:
-
-- Data cleaning and preprocessing.
-- One-hot encoding of labels.
-- CNN training from scratch.
-- Transfer learning with ResNet152.
-- Evaluation using confusion matrix and accuracy metrics.
-- Hyperparameter tuning and data augmentation for performance improvements.
+Key goals:
+- Build an end-to-end deep learning pipeline for MRI scan classification.
+- Use both custom CNN and ResNet152-based transfer learning models.
+- Achieve high accuracy, ideally >95%, on validation data.
+- Provide clean code, reproducibility, and detailed evaluation.
 
 ---
 
-## 📂 Dataset
+## Dataset
 
-The dataset consists of labeled brain MRI scans categorized into:
+The dataset consists of labeled brain MRI scans categorized into four stages:
 
-- **Mild Demented**
-- **Moderate Demented**
 - **Non-Demented**
 - **Very Mild Demented**
+- **Mild Demented**
+- **Moderate Demented**
 
-### Sources:
-The dataset used is publicly available from [Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset) or similar repositories. Ensure compliance with the dataset's license if used elsewhere.
-
----
-
-## 🧠 Approach
-
-We started with a basic CNN architecture and achieved ~81% validation accuracy. Upon applying transfer learning using **ResNet152**, our accuracy improved significantly.
-
-### Techniques Used:
-- **Data Augmentation**
-- **Transfer Learning (ResNet152)**
-- **Confusion Matrix Analysis**
-- **Optimization with Adam**
-- **Model Evaluation with Validation Split**
+### Dataset Source:
+[Kaggle - Alzheimer's MRI Dataset](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)  
+(Ensure you follow the dataset license when reusing or redistributing.)
 
 ---
 
-## 🏗️ Model Architecture
+## Approach
 
-### 1. Baseline CNN:
-- 3 convolutional layers
-- MaxPooling + ReLU
-- Dense + Softmax
-- Accuracy: ~85% (after tuning)
+The pipeline includes:
 
-### 2. Transfer Learning with ResNet152:
-- Removed dropout for better convergence
-- Fine-tuned ResNet layers
-- Added custom classification head
-- **Final Accuracy:** ✅ **99% on training**, **~95% on validation**
-
----
-
-## 📊 Results
-
-| Model           | Training Acc | Validation Acc | Confusion Matrix |
-|----------------|--------------|----------------|------------------|
-| CNN (Baseline) | 81%          | 85%            | Moderate         |
-| ResNet152 TL   | 99%          | **95+%**       | Excellent        |
+1. **Data Preprocessing**
+   - Resize, normalize, and split dataset into train/val/test
+   - One-hot encode the class labels
+2. **Model Training**
+   - Baseline CNN model
+   - Transfer learning using pretrained **ResNet152**
+   - Experimentation with dropout, data augmentation, learning rate tuning
+3. **Model Evaluation**
+   - Confusion matrix, accuracy, precision, recall
+   - Visualization of predictions
 
 ---
 
-## ⚙️ Installation
+## Model Architecture
+
+### Baseline CNN:
+- 3x Conv2D + ReLU + MaxPooling
+- Flatten + Dense + Softmax
+- Achieved ~85% accuracy after tuning
+
+### Transfer Learning with ResNet152:
+- Pretrained ResNet152 (from ImageNet)
+- Removed dropout (improved validation accuracy)
+- Custom classification head:
+  - GlobalAvgPool → Dense(256) → ReLU → Dense(4) + Softmax
+- Final Accuracy: **99% training**, **>95% validation**
+
+---
+
+## Results
+
+| Model           | Training Accuracy | Validation Accuracy | Notes                           |
+|----------------|-------------------|----------------------|----------------------------------|
+| CNN (Custom)   | 81%               | ~85%                | Good baseline                   |
+| ResNet152 (TL) | 99%               | **95+%**            | With augmentation & tuning      |
+
+---
+
+## Installation
 
 ```bash
+# Clone the repo
 git clone https://github.com/your-username/Alzheimer-MRI-Detection.git
 cd Alzheimer-MRI-Detection
 
-# (Optional) Create virtual environment
+# (Optional) Create and activate a virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
