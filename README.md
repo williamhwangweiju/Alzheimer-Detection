@@ -106,7 +106,7 @@ pip install -r requirements.txt
 ## ⚠️ Disclaimer & Citation
 
 > ⚠️ **Academic Integrity & Usage Notice**  
-This project was developed for educational purposes as part of a university deep learning course and individual research initiative. **Do not plagiarize** or submit this as your own in academic settings, coursework, competitions, or hiring evaluations. You may reuse or reference the code **only with proper credit** and acknowledgment.
+This project was developed for educational purposes as part of the University of Toronto's APS360 deep learning course and individual research initiative. **Do not plagiarize** or submit this as your own in academic settings, coursework, competitions, or hiring evaluations. You may reuse or reference the code **only with proper credit** and acknowledgment.
 
 Using this work without appropriate citation may violate academic integrity policies and result in disciplinary action.
 
@@ -115,3 +115,11 @@ Using this work without appropriate citation may violate academic integrity poli
 ### 🔖 Citation
 
 If this work contributes to your academic, professional, or personal projects, please cite it as:
+@misc{alzheimermri2025,
+  title={Alzheimer’s Detection with Deep Learning},
+  author={Hitansh Bhatt, Hwang (William) Wei Ju, Muhammad Irfan, Aryan Ghosh},
+  year={2025},
+  howpublished={\url{https://github.com/HitanshBhatt/Alzheimer-Detection-APS360-Project}},
+  note={APS360 Deep learning coursework project}
+}
+
