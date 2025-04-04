@@ -41,7 +41,7 @@ The dataset consists of labeled brain MRI scans categorized into four stages:
 - **Moderate Demented**
 
 ### Dataset Source:
-[Kaggle - Alzheimer's MRI Dataset](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)  
+[Kaggle - Alzheimer's MRI Dataset](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset)  
 (Ensure you follow the dataset license when reusing or redistributing.)
 
 ---
