@@ -14,7 +14,7 @@ A deep learning-based project to detect Alzheimer's Disease using brain MRI scan
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Disclaimer & Citation](#disclaimer--citation)
+- [Disclaimer & Citation](#disclaimer-and-citation)
 - [Contact](#contact)
 
 ---
@@ -103,7 +103,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Disclaimer & Citation
+## Disclaimer and Citation
 
 > **Academic Integrity & Usage Notice**  
 This project was developed for educational purposes as part of the University of Toronto's APS360 deep learning course and individual research initiative. **Do not plagiarize** or submit this as your own in academic settings, coursework, competitions, or hiring evaluations. You may reuse or reference the code **only with proper credit** and acknowledgment.
@@ -115,6 +115,7 @@ Using this work without appropriate citation may violate academic integrity poli
 ### Citation
 
 If this work contributes to your academic, professional, or personal projects, please cite it as:
+```bash
 @misc{alzheimermri2025,
   title={Alzheimer’s Detection with Deep Learning},
   author={Hitansh Bhatt, Hwang (William) Wei Ju, Muhammad Irfan, Aryan Ghosh},
@@ -122,4 +123,5 @@ If this work contributes to your academic, professional, or personal projects, p
   howpublished={\url{https://github.com/HitanshBhatt/Alzheimer-Detection-APS360-Project}},
   note={APS360 Deep learning coursework project}
 }
+```
 
