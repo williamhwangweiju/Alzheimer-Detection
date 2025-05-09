@@ -129,6 +129,5 @@ If this work contributes to your academic, professional, or personal projects, p
 
 If you have any questions, suggestions, or want to collaborate, feel free to reach out:
 
-- **Email:** hitansh.bhatt@mail.utoronto.ca  
-- **GitHub:** HitanshBhatt (https://github.com/HitanshBhatt)
+- **Email:** william.ju@mail.utoronto.ca  
 
