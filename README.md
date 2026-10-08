@@ -54,7 +54,7 @@ The pipeline includes:
 1. **Data Preprocessing**
    - Resize images to 128 × 128
    - Encode the four class labels
-   - Split the dataset 85/15 into training and validation sets
+   - Split the dataset into training and validation sets
 2. **Model Training**
    - Random Forest baseline
    - Custom CNN (AlzheimerNet)
@@ -70,7 +70,7 @@ The pipeline includes:
 ## Model Architecture
 
 ### Random Forest Baseline:
-- 100 trees trained on flattened 128 × 128 × 3 pixel values
+- 100 trees trained on flattened 128 × 128 × 3 images, with pixel values normalized to [0, 1]
 
 ### Custom CNN (AlzheimerNet):
 - Two convolutional blocks, each with two Conv2D layers, batch normalization, max-pooling, and dropout (0.25)
@@ -87,20 +87,29 @@ The pipeline includes:
 
 ## Results
 
-All metrics are on a held-out 15% split of the 24,000 images. For ResNet152, the same split also guided the Optuna search, so there is no separate test set.
+Metrics are on the validation set.
 
 | Model                         | Training Accuracy | Validation Accuracy | Weighted F1 |
 |-------------------------------|-------------------|---------------------|-------------|
-| Random Forest (baseline)      | —                 | 74.3%               | —           |
+| Random Forest (baseline)      | —                 | 74.3%               | ≈74.1%      |
 | ResNet152 (transfer learning) | 99.1%             | **96.5%**           | **96.5%**   |
 
-ResNet152 also reached 96.7% weighted precision and 96.5% weighted recall.
+ResNet152 also reached 96.7% weighted precision and 96.5% weighted recall. Recall by stage:
+
+| Stage              | Recall |
+|--------------------|--------|
+| Non-Demented       | 88.7%  |
+| Very Mild Demented | 98.6%  |
+| Mild Demented      | 98.7%  |
+| Moderate Demented  | 100.0% |
+
+The model was also tested qualitatively on unused images from the same source and on external MRI images; see Section 9 of the final report.
 
 ---
 
 ## Usage
 
-The full pipeline is in `Team27_APS360.ipynb`.
+The full pipeline is in `Team27_APS360.ipynb` (also available on [Google Colab](https://colab.research.google.com/drive/1dK2eVPZ8EtbMdCNKKIENec7bjbIFtX2t?usp=sharing)).
 
 1. Clone the repo:
    ```bash
